@@ -18,9 +18,13 @@ nova_disciplina = {
 }
 #disciplinas_repository.insert_document(nova_disciplina)
 
-disciplinas_repository.select_documents()
+#dados = disciplinas_repository.select_documents({'nome': "Artes", 'cursos.cod': 'cursos aleatorios'})
+#print(dados)
 
-
+#dados = disciplinas_repository.select_one({'nome': "Artes", 'cursos.cod': 'cursos aleatorios'})
+#dados = disciplinas_repository.select_if_property_exist('cod')
+dados = disciplinas_repository.select_meny_order({'cargaHoraria': { '$exists': True}}, [('carca', -1)])
+print(dados)
 
 
 # nova_disciplina = {
